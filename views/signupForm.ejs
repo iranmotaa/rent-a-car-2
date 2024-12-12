@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>Novo Usuário</title>
+    </head>
+    <body>
+        <% if(locals.e){ %>
+            <div class="toast error">
+                <p><%= e %></p>
+            </div>
+        <% } %>
+        <form method="POST" action="/addNovoUsuario">
+            <fieldset>
+                <legend>Novo Usuário</legend>
+                <label for="nome">Nome:</label>
+                <input name="nome" type="text"/>
+                <label for="email">E-mail:</label>
+                <input name="email" type="email"/>
+                <label for="senha">Senha:</label>
+                <input name="senha" type="password"/>
+                <div class="buttons-container">
+                    <input class="button confirm" type="submit" value="Salvar"/>
+                    <a class="button cancel" href="/">Cancelar</a>
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>

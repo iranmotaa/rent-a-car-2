@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <title>Rent-a-Car</title>
+  </head>
+  <body>
+    <h1>Rent-a-Car</h1>
+
+    <% if(locals.credenciais){ %>
+    <div class="toast success">
+      <p>Bem Vindo <%= credenciais.usuario.name %></p>
+    </div>
+    <% } %>
+
+    <a href="/listagemDeUsuarios"> Gerenciamento de Usuários </a>
+
+    <main>
+      <section class="car-group">
+        <div class="car-card">
+          <img
+            class="card-image"
+            src="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2024/06/26/fiat-mobi-vf98e7vv9zdx.jpg"
+            alt="Carros Básicos"
+          />
+          <h2 class="card-title">BÁSICOS</h2>
+          <div class="card-button">
+            <button class="btn-ver">
+              <a class="button-link" href="/veiculosBasicos">Ver</a>
+            </button>
+          </div>
+        </div>
+        <div class="car-card">
+          <img
+            class="card-image"
+            src="https://www.boaterrachevrolet.com.br/content/dam/chevrolet/sa/br/pt/master/home/cars/onix/next-chevrolet/chevrolet-onix.jpg?imwidth=960"
+            alt="Carros Básicos"
+          />
+          <h2 class="card-title">MÉDIO</h2>
+          <div class="card-button">
+            <button class="btn-ver">
+              <a class="button-link" href="/veiculosMedio">Ver</a>
+            </button>
+          </div>
+        </div>
+        <div class="car-card">
+          <img
+            class="card-image"
+            src="https://www.agoramotors.com.br/wp-content/uploads/2022/05/Levante-2022-branca-1024x576.jpg"
+            alt="Carros Básicos"
+          />
+          <h2 class="card-title">LUXO</h2>
+          <div class="card-button">
+            <button class="btn-ver">
+              <a class="button-link" href="/veiculosLuxo">Ver</a>
+            </button>
+          </div>
+        </div>
+        <div class="car-card">
+          <img
+            class="card-image"
+            src="https://revistainterarq.com.br/wp-content/uploads/2019/04/01_lvn_34-front_OK-700x405.jpg"
+            alt="Carros Básicos"
+          />
+          <h2 class="card-title">SUPER LUXO</h2>
+          <div class="card-button">
+            <button class="btn-ver">
+              <a class="button-link" href="/veiculosSuperLuxo">Ver</a>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
