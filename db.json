@@ -1,0 +1,68 @@
+{
+  "carros": [
+    {
+      "id": 1,
+      "imagem": "https://img2.icarros.com/dbimg/imgmodelo/4/269_4.webp",
+      "marca": "FIAT",
+      "modelo": "UNO",
+      "descricao": "1.0 MPI MILLE FIRE ECONOMY 8V FLEX 4P MANUAL",
+      "precoDia": "R$ 29,80"
+    },
+    {
+      "id": 2,
+      "imagem": "https://static.kbb.com.br/pkw/t/tf8fab21f-f420-4553-9b64-5ec0e3f01979.jpg",
+      "marca": "CHEVROLET",
+      "modelo": "CELTA",
+      "descricao": "1.0 MPFI LT 8V FLEX 4P MANUAL",
+      "precoDia": "R$ 30,89"
+    },
+    {
+      "id": 3,
+      "imagem": "https://edgecast-img.yahoo.net/mysterio/api/AE99E7760AADF4B7A319438215E6B4946753B65EFA7228D719B75E91FF22B93E/autoblog/resizefill_w1200_h675;quality_80;format_webp;cc_31536000;/https://s.aolcdn.com/commerce/autodata/images/USD20HOC021B021001.jpg",
+      "marca": "HONDA",
+      "modelo": "CIVIC",
+      "descricao": "2.0 16V FLEXONE EXL 4P CVT",
+      "precoDia": "R$ 98,90"
+    },
+    {
+      "id": 4,
+      "imagem": "https://www.boaterrachevrolet.com.br/content/dam/chevrolet/sa/br/pt/master/home/cars/onix/next-chevrolet/chevrolet-onix.jpg?imwidth=960",
+      "marca": "CHEVROLET",
+      "modelo": "ONIX",
+      "descricao": "1.0 TURBO FLEX LTZ MANUAL",
+      "precoDia": "R$ 68,99"
+    },
+    {
+      "id": 5,
+      "imagem": "https://media.toyota.com.br/f3b85b1a-ab92-4330-b1d3-d4cdc9670166.png",
+      "marca": "TOYOTA",
+      "modelo": "HILUX",
+      "descricao": "2.8 D-4D TURBO DIESEL CD GR-S 4X4 AUTOMÁTICO",
+      "precoDia": "R$ 440,00"
+    },
+    {
+      "id": 6,
+      "imagem": "https://edgecast-img.yahoo.net/mysterio/api/1F0E77516D5E776278B30D0784D6B0F0DD917B4A2A4C97BB22F0CCB5CA8213B5/autoblog/resizefill_w1200_h675;quality_80;format_webp;cc_31536000;/https://s.aolcdn.com/commerce/autodata/images/USD00TOC041B021001.jpg",
+      "marca": "CHEVROLET",
+      "modelo": "COROLLA",
+      "descricao": "1.8 VVT-I HYBRID FLEX ALTIS CVT",
+      "precoDia": "R$ 209,99"
+    },
+    {
+      "id": 7,
+      "imagem": "https://imgd-ct.aeplcdn.com/1056x660/n/cw/ec/130677/huracan-tecnica-right-front-three-quarter.jpeg?isig=0&q=80",
+      "marca": "LAMBORGUINI",
+      "modelo": "HURACAN",
+      "descricao": "5.2 V10 GASOLINA LP 640 STO LDF",
+      "precoDia": "R$ 5.440,00"
+    },
+    {
+      "id": 8,
+      "imagem": "https://image.webmotors.com.br/_fotos/anuncionovos/gigante/2024/202412/20241203/ferrari-sf90-3.9-v8-turbo-phev-stradale-f1dct-wmimagem1025182286.jpg?s=fill&w=249&h=186&q=70",
+      "marca": "FERRARI",
+      "modelo": "SF90",
+      "descricao": "3.9 V8 TURBO PHEV STRADALE F1-DCT",
+      "precoDia": "R$ 5.600,00"
+    }
+  ]
+}

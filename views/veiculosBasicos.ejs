@@ -14,14 +14,12 @@
     </header>
     <main>
       <section class="car-group-oferta">
+        
         <div class="car-card">
-          <img
-            class="card-image"
-            src="https://img2.icarros.com/dbimg/imgmodelo/4/269_4.webp"
-          />
-          <h2 class="card-title">FIAT UNO</h2>
-          <p class="card-desc">1.0 MPI MILLE FIRE ECONOMY 8V FLEX 4P MANUAL</p>
-          <p class="card-price">R$ 29,80 / DIA</p>
+          <img class="card-image" id="unoImage" src="" />
+          <h2 class="card-title" id="unoTitle"></h2>
+          <p class="card-desc" id="unoDesc"></p>
+          <p class="card-price" id="unoPrice"></p>
           <div class="card-button-oferta">
             <button class="btn-ver-oferta">
               <a class="button-link-oferta" target="_blank" href="#"
@@ -30,14 +28,12 @@
             </button>
           </div>
         </div>
+
         <div class="car-card">
-          <img
-            class="card-image"
-            src="https://static.kbb.com.br/pkw/t/tf8fab21f-f420-4553-9b64-5ec0e3f01979.jpg"
-          />
-          <h2 class="card-title">CHEVROLET CELTA</h2>
-          <p class="card-desc">1.0 MPFI LT 8V FLEX 4P MANUAL</p>
-          <p class="card-price">R$ 30,89 / DIA</p>
+          <img class="card-image" src="" id="celtaImage"/>
+          <h2 class="card-title" id="celtaTitle"></h2>
+          <p class="card-desc" id="celtaDesc"></p>
+          <p class="card-price" id="celtaPrice"></p>
           <div class="card-button-oferta">
             <button class="btn-ver-oferta">
               <a class="button-link-oferta" target="_blank" href="#"
@@ -46,7 +42,42 @@
             </button>
           </div>
         </div>
+
       </section>
     </main>
+    <script>
+      const URL = "http://10.1.1.245:4000/carros";
+
+      async function chamarApi() {
+        const resp = await fetch(URL);
+        const obj = await resp.json();
+        try {
+          let uno = obj[0];
+          let unoImage = document.getElementById("unoImage");
+          let unoTitle = document.getElementById("unoTitle");
+          let unoDesc = document.getElementById("unoDesc");
+          let unoPrice = document.getElementById("unoPrice");
+          unoImage.src = uno.imagem;
+          unoTitle.innerHTML = uno.marca + " " + uno.modelo;
+          unoDesc.innerHTML = uno.descricao;
+          unoPrice.innerHTML = uno.precoDia + " / DIA";
+
+          let celta = obj[1];
+          let celtaImage = document.getElementById("celtaImage");
+          let celtaTitle = document.getElementById("celtaTitle");
+          let celtaDesc = document.getElementById("celtaDesc");
+          let celtaPrice = document.getElementById("celtaPrice");
+
+          celtaImage.src = celta.imagem;
+          celtaTitle.innerHTML = celta.marca + " " + celta.modelo;
+          celtaDesc.innerHTML = celta.descricao;
+          celtaPrice.innerHTML = celta.precoDia;
+
+        } catch (error) {
+          alert("errorrrr");
+        }
+      }
+      chamarApi();
+    </script>
   </body>
 </html>
