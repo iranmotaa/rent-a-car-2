@@ -3,7 +3,7 @@ import { Sequelize } from "sequelize";
 const banco = 'rentdb';
 const usuario = 'root';
 const senha = '';
-const opcoes = {dialect: "mysql", host: "localhost", port: 3306};
+const opcoes = {dialect: "mysql", host: "localhost", port: 3307};
 
 const sequelize = new Sequelize("", usuario, senha, opcoes);
 

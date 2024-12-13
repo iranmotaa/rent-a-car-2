@@ -17,11 +17,12 @@
         <div class="car-card">
           <img
             class="card-image"
-            src="https://edgecast-img.yahoo.net/mysterio/api/AE99E7760AADF4B7A319438215E6B4946753B65EFA7228D719B75E91FF22B93E/autoblog/resizefill_w1200_h675;quality_80;format_webp;cc_31536000;/https://s.aolcdn.com/commerce/autodata/images/USD20HOC021B021001.jpg"
+            id="civicImage"
+            src=""
           />
-          <h2 class="card-title">HONDA CIVIC</h2>
-          <p class="card-desc">2.0 16V FLEXONE EXL 4P CVT</p>
-          <p class="card-price">R$ 98,90 / DIA</p>
+          <h2 class="card-title" id="civicTitle"></h2>
+          <p class="card-desc" id="civicDesc"></p>
+          <p class="card-price" id="civicPrice"></p>
           <div class="card-button-oferta">
             <button class="btn-ver-oferta">
               <a class="button-link-oferta" target="_blank" href="#"
@@ -33,11 +34,12 @@
         <div class="car-card">
           <img
             class="card-image"
-            src="https://www.boaterrachevrolet.com.br/content/dam/chevrolet/sa/br/pt/master/home/cars/onix/next-chevrolet/chevrolet-onix.jpg?imwidth=960"
+            id="onixImage"
+            src=""
           />
-          <h2 class="card-title">CHEVROLET ONIX</h2>
-          <p class="card-desc">1.0 TURBO FLEX LTZ MANUAL</p>
-          <p class="card-price">R$ 68,99 / DIA</p>
+          <h2 class="card-title" id="onixTitle"></h2>
+          <p class="card-desc" id="onixDesc"></p>
+          <p class="card-price" id="onixPrice"></p>
           <div class="card-button-oferta">
             <button class="btn-ver-oferta">
               <a class="button-link-oferta" target="_blank" href="#"
@@ -48,5 +50,39 @@
         </div>
       </section>
     </main>
+    <script>
+      const URL = "http://192.168.56.1:4000/carros";
+
+      async function chamarApi() {
+        const resp = await fetch(URL);
+        const obj = await resp.json();
+        try {
+          let civic = obj[2];
+          let civicImage = document.getElementById("civicImage");
+          let civicTitle = document.getElementById("civicTitle");
+          let civicDesc = document.getElementById("civicDesc");
+          let civicPrice = document.getElementById("civicPrice");
+          civicImage.src = civic.imagem;
+          civicTitle.innerHTML = civic.marca + " " + civic.modelo;
+          civicDesc.innerHTML = civic.descricao;
+          civicPrice.innerHTML = civic.precoDia + " / DIA";
+
+          let onix = obj[3];
+          let onixImage = document.getElementById("onixImage");
+          let onixTitle = document.getElementById("onixTitle");
+          let onixDesc = document.getElementById("onixDesc");
+          let onixPrice = document.getElementById("onixPrice");
+
+          onixImage.src = onix.imagem;
+          onixTitle.innerHTML = onix.marca + " " + onix.modelo;
+          onixDesc.innerHTML = onix.descricao;
+          onixPrice.innerHTML = onix.precoDia + " / DIA";
+
+        } catch (error) {
+          alert("errorrrr");
+        }
+      }
+      chamarApi();
+    </script>
   </body>
 </html>

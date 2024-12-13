@@ -1,4 +1,4 @@
-const URL = "http://10.1.1.245:4000/carros";
+const URL = "http://192.168.56.1:4000/carros";
 
 async function chamarApi() {
   const resp = await fetch(URL);

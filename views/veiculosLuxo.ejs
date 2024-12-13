@@ -17,11 +17,12 @@
         <div class="car-card">
           <img
             class="card-image"
-            src="https://media.toyota.com.br/f3b85b1a-ab92-4330-b1d3-d4cdc9670166.png"
+            id="hiluxImage"
+            src=""
           />
-          <h2 class="card-title">TOYOTA HILUX</h2>
-          <p class="card-desc">2.8 D-4D TURBO DIESEL CD GR-S 4X4 AUTOMÁTICO</p>
-          <p class="card-price">R$ 440,00 / DIA</p>
+          <h2 class="card-title" id="hiluxTitle"></h2>
+          <p class="card-desc" id="hiluxDesc"></p>
+          <p class="card-price" id="hiluxPrice"></p>
           <div class="card-button-oferta">
             <button class="btn-ver-oferta">
               <a class="button-link-oferta" target="_blank" href="#"
@@ -33,11 +34,12 @@
         <div class="car-card">
           <img
             class="card-image"
-            src="https://edgecast-img.yahoo.net/mysterio/api/1F0E77516D5E776278B30D0784D6B0F0DD917B4A2A4C97BB22F0CCB5CA8213B5/autoblog/resizefill_w1200_h675;quality_80;format_webp;cc_31536000;/https://s.aolcdn.com/commerce/autodata/images/USD00TOC041B021001.jpg"
+            id="corollaImage"
+            src=""
           />
-          <h2 class="card-title">TOYOTA COROLLA</h2>
-          <p class="card-desc">1.8 VVT-I HYBRID FLEX ALTIS CVT</p>
-          <p class="card-price">R$ 209,99 / DIA</p>
+          <h2 class="card-title" id="corollaTitle"></h2>
+          <p class="card-desc" id="corollaDesc"></p>
+          <p class="card-price" id="corollaPrice"></p>
           <div class="card-button-oferta">
             <button class="btn-ver-oferta">
               <a class="button-link-oferta" target="_blank" href="#"
@@ -48,5 +50,39 @@
         </div>
       </section>
     </main>
+    <script>
+      const URL = "http://192.168.56.1:4000/carros";
+
+      async function chamarApi() {
+        const resp = await fetch(URL);
+        const obj = await resp.json();
+        try {
+          let hilux = obj[4];
+          let hiluxImage = document.getElementById("hiluxImage");
+          let hiluxTitle = document.getElementById("hiluxTitle");
+          let hiluxDesc = document.getElementById("hiluxDesc");
+          let hiluxPrice = document.getElementById("hiluxPrice");
+          hiluxImage.src = hilux.imagem;
+          hiluxTitle.innerHTML = hilux.marca + " " + hilux.modelo;
+          hiluxDesc.innerHTML = hilux.descricao;
+          hiluxPrice.innerHTML = hilux.precoDia + " / DIA";
+
+          let corolla = obj[5];
+          let corollaImage = document.getElementById("corollaImage");
+          let corollaTitle = document.getElementById("corollaTitle");
+          let corollaDesc = document.getElementById("corollaDesc");
+          let corollaPrice = document.getElementById("corollaPrice");
+
+          corollaImage.src = corolla.imagem;
+          corollaTitle.innerHTML = corolla.marca + " " + corolla.modelo;
+          corollaDesc.innerHTML = corolla.descricao;
+          corollaPrice.innerHTML = corolla.precoDia + " / DIA";
+
+        } catch (error) {
+          alert("errorrrr");
+        }
+      }
+      chamarApi();
+    </script>
   </body>
 </html>
