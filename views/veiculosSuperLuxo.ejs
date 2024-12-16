@@ -41,12 +41,12 @@
     </section>
   </main>
   <script>
-    const URL = "http://192.168.56.1:4000/carros";
+    const URL = "http://192.168.2.105:4000/carros";
 
     async function chamarApi() {
-      const resp = await fetch(URL);
-      const obj = await resp.json();
       try {
+        const resp = await fetch(URL);
+        const obj = await resp.json();
         let huracan = obj[6];
         let huracanImage = document.getElementById("huracanImage");
         let huracanTitle = document.getElementById("huracanTitle");
@@ -69,7 +69,7 @@
         ferrariPrice.innerHTML = ferrari.precoDia + " / DIA";
 
       } catch (error) {
-        alert("errorrrr");
+        window.location.href = "paginaFa";
       }
     }
     chamarApi();

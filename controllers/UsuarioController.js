@@ -69,4 +69,7 @@ export default class UsuarioController {
   async renderizarVeiculosSuperLuxo(req, res){
     res.render("veiculosSuperLuxo");
   }
+  async renderizarPaginaFa(req, res){
+    res.render("paginaFa");
+  }
 }

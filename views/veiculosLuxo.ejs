@@ -51,12 +51,12 @@
       </section>
     </main>
     <script>
-      const URL = "http://192.168.56.1:4000/carros";
+      const URL = "http://192.168.2.105:4000/carros";
 
       async function chamarApi() {
-        const resp = await fetch(URL);
-        const obj = await resp.json();
         try {
+          const resp = await fetch(URL);
+          const obj = await resp.json();
           let hilux = obj[4];
           let hiluxImage = document.getElementById("hiluxImage");
           let hiluxTitle = document.getElementById("hiluxTitle");
@@ -79,7 +79,7 @@
           corollaPrice.innerHTML = corolla.precoDia + " / DIA";
 
         } catch (error) {
-          alert("errorrrr");
+          window.location.href = "paginaFa";
         }
       }
       chamarApi();

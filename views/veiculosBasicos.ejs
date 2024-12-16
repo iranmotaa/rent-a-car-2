@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <title>Veículos Básicos</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="main.css" />
-  <title>Veículos Básicos</title>
-</head>
-
-<body>
-  <header class="title-header">
-    <h1 class="title"><a href="/paginaPrincipal">RENT A CAR</a></h1>
-    <p class="title">/</p>
-    <p class="title-red">BÁSICOS</p>
-  </header>
-  <main>
-    <section class="car-group-oferta">
-
-      <div class="car-card">
-        <img class="card-image" id="unoImage" src="" />
-        <h2 class="card-title" id="unoTitle"></h2>
-        <p class="card-desc" id="unoDesc"></p>
-        <p class="card-price" id="unoPrice"></p>
-        <div class="card-button-oferta">
-          <button class="btn-ver-oferta">
-            <a class="button-link-oferta" target="_blank" href="#">VER OFERTA</a>
-          </button>
+  <body>
+    <header class="title-header">
+      <h1 class="title"><a href="/paginaPrincipal">RENT A CAR</a></h1>
+      <p class="title">/</p>
+      <p class="title-red">BÁSICOS</p>
+    </header>
+    <main>
+      <section class="car-group-oferta">
+        <div class="car-card">
+          <img class="card-image" id="unoImage" src="" />
+          <h2 class="card-title" id="unoTitle"></h2>
+          <p class="card-desc" id="unoDesc"></p>
+          <p class="card-price" id="unoPrice"></p>
+          <div class="card-button-oferta">
+            <button class="btn-ver-oferta">
+              <a class="button-link-oferta" target="_blank" href="#"
+                >VER OFERTA</a
+              >
+            </button>
+          </div>
         </div>
-      </div>
 
-      <div class="car-card">
-        <img class="card-image" src="" id="celtaImage" />
-        <h2 class="card-title" id="celtaTitle"></h2>
-        <p class="card-desc" id="celtaDesc"></p>
-        <p class="card-price" id="celtaPrice"></p>
-        <div class="card-button-oferta">
-          <button class="btn-ver-oferta">
-            <a class="button-link-oferta" target="_blank" href="#">VER OFERTA</a>
-          </button>
+        <div class="car-card">
+          <img class="card-image" src="" id="celtaImage" />
+          <h2 class="card-title" id="celtaTitle"></h2>
+          <p class="card-desc" id="celtaDesc"></p>
+          <p class="card-price" id="celtaPrice"></p>
+          <div class="card-button-oferta">
+            <button class="btn-ver-oferta">
+              <a class="button-link-oferta" target="_blank" href="#"
+                >VER OFERTA</a
+              >
+            </button>
+          </div>
         </div>
-      </div>
+      </section>
+    </main>
+    <script>
+      const URL = "http://192.168.2.105:4000/carros";
 
-    </section>
-  </main>
-  <script>
-    const URL = "http://192.168.56.1:4000/carros";
-
-    async function chamarApi() {
-      const resp = await fetch(URL);
-      const obj = await resp.json();
-      try {
-        if (resp.status == 200) {
+      async function chamarApi() {
+        try {
+          const resp = await fetch(URL);
+          const obj = await resp.json();
           let uno = obj[0];
           let unoImage = document.getElementById("unoImage");
           let unoTitle = document.getElementById("unoTitle");
@@ -71,17 +71,11 @@
           celtaTitle.innerHTML = celta.marca + " " + celta.modelo;
           celtaDesc.innerHTML = celta.descricao;
           celtaPrice.innerHTML = celta.precoDia + " / DIA";
-        }
-
-        
-      } catch (error) {
-        if(resp.status == 500){
-
+        } catch (error) {
+          window.location.href = "paginaFa";
         }
       }
-    }
-    chamarApi();
-  </script>
-</body>
-
+      chamarApi();
+    </script>
+  </body>
 </html>

@@ -239,3 +239,22 @@ th {
   text-decoration: none;
   font-size: 1.625rem;
 }
+
+.body-error{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.div-error{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  padding: 20px;
+}
+
+.text-error{
+  text-align: center;
+}

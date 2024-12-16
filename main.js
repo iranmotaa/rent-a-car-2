@@ -35,6 +35,7 @@ app.get('/veiculosBasicos', usuarioController.renderizarVeiculosBasicos);
 app.get('/veiculosMedio', usuarioController.renderizarVeiculosMedio);
 app.get('/veiculosLuxo', usuarioController.renderizarVeiculosLuxo);
 app.get('/veiculosSuperLuxo', usuarioController.renderizarVeiculosSuperLuxo);
+app.get('/paginaFa', usuarioController.renderizarPaginaFa);
 
 app.listen(3000,() => {
     console.log("Aplicação no ar.");

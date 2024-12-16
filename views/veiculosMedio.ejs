@@ -15,11 +15,7 @@
     <main>
       <section class="car-group-oferta">
         <div class="car-card">
-          <img
-            class="card-image"
-            id="civicImage"
-            src=""
-          />
+          <img class="card-image" id="civicImage" src="" />
           <h2 class="card-title" id="civicTitle"></h2>
           <p class="card-desc" id="civicDesc"></p>
           <p class="card-price" id="civicPrice"></p>
@@ -32,11 +28,7 @@
           </div>
         </div>
         <div class="car-card">
-          <img
-            class="card-image"
-            id="onixImage"
-            src=""
-          />
+          <img class="card-image" id="onixImage" src="" />
           <h2 class="card-title" id="onixTitle"></h2>
           <p class="card-desc" id="onixDesc"></p>
           <p class="card-price" id="onixPrice"></p>
@@ -51,12 +43,12 @@
       </section>
     </main>
     <script>
-      const URL = "http://192.168.56.1:4000/carros";
+      const URL = "http://192.168.2.105:4000/carros";
 
       async function chamarApi() {
-        const resp = await fetch(URL);
-        const obj = await resp.json();
         try {
+          const resp = await fetch(URL);
+          const obj = await resp.json();
           let civic = obj[2];
           let civicImage = document.getElementById("civicImage");
           let civicTitle = document.getElementById("civicTitle");
@@ -77,9 +69,8 @@
           onixTitle.innerHTML = onix.marca + " " + onix.modelo;
           onixDesc.innerHTML = onix.descricao;
           onixPrice.innerHTML = onix.precoDia + " / DIA";
-
         } catch (error) {
-          alert("errorrrr");
+          window.location.href = "paginaFa";
         }
       }
       chamarApi();
